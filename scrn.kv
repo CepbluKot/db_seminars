@@ -64,7 +64,7 @@ WindowManager:
         name: 'NavScreen'
         #:import get_color_from_hex kivy.utils.get_color_from_hex
         MDScreen:
-            
+            id: here
             MDBottomNavigation:
                 panel_color: get_color_from_hex("#eeeaea")
                 selected_color_background: get_color_from_hex("#97ecf8")
@@ -91,10 +91,16 @@ WindowManager:
                         halign: 'center'
 
                 MDBottomNavigationItem:
+                    id: syda
                     name: 'Address'
                     text: 'Address'
                     icon: 'office-building-outline'
 
                     MDLabel:
-                        text: 'Address Table'
+                        text: 'Address Tableee'
                         halign: 'center'
+                    MDTextField:
+                        id: text_one
+                        hint_text: "survivin"
+                        size_hint_x: .1
+                        on_text_validate: root.update_data()
