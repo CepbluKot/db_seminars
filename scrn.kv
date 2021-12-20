@@ -13,6 +13,8 @@ WindowManager:
                 size_hint: None, None
                 size: 300, 400
                 pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                size_hint_x: 0.3
+                size_hint_y: 0.4
                 padding: 25
                 spacing: 25
                 orientation: "vertical"
@@ -22,7 +24,7 @@ WindowManager:
                 MDLabel:
                     id: login_label
                     text: "Log In to your database"
-                    font_size: 18
+                    font_size: 50
                     halign: 'center'
                     size_hint_y: None
                     height: self.texture_size[1]
@@ -37,13 +39,13 @@ WindowManager:
                     hint_text: "Login"
                     size_hint_x: None
                     font_size: 18
-                    width: 250 
+                    width: 400
 
                 MDTextField:
                     id: password_field
                     hint_text: "Password"
                     size_hint_x: None
-                    width: 250
+                    width: 400
                     font_size: 18
 
                 MDFillRoundFlatButton:
@@ -71,6 +73,7 @@ WindowManager:
                 text_color_active: 0, 0, 0, 1
 
                 MDBottomNavigationItem:
+                    id: main_table
                     name: 'Main Table'
                     text: 'Main Table'
                     icon: 'database'
@@ -80,7 +83,44 @@ WindowManager:
                         text: 'Main Table'
                         halign: 'center'
 
+                    MDTextField:
+                        id: first_name
+                        hint_text: "first name"
+                        size_hint_x: .1
+                        pos_hint: {"center_x": 0.1, "center_y": 0.82}
+                        on_text_validate: root.update_data()
+
+                    MDTextField:
+                        id: surname
+                        hint_text: "surname"
+                        size_hint_x: .1
+                        on_text_validate: root.update_data()
+                        pos_hint: {"center_x": 0.25, "center_y": 0.82}
+
+                    MDTextField:
+                        id: last_name
+                        hint_text: "last name"
+                        size_hint_x: .1
+                        on_text_validate: root.update_data()
+                        pos_hint: {"center_x": 0.4, "center_y": 0.82}
+
+                    MDTextField:
+                        id: phone_number
+                        hint_text: "phone number"
+                        size_hint_x: .1
+                        on_text_validate: root.update_data()
+                        pos_hint: {"center_x": 0.55, "center_y": 0.82}
+
+                    MDTextField:
+                        id: address
+                        hint_text: "address"
+                        size_hint_x: .1
+                        on_text_validate: root.update_data()
+                        pos_hint: {"center_x": 0.7, "center_y": 0.82}
+
+
                 MDBottomNavigationItem:
+                    id: phone
                     name: 'Phone Number'
                     text: 'Phone Number'
                     icon: 'cellphone'
@@ -99,8 +139,4 @@ WindowManager:
                     MDLabel:
                         text: 'Address Tableee'
                         halign: 'center'
-                    MDTextField:
-                        id: text_one
-                        hint_text: "survivin"
-                        size_hint_x: .1
-                        on_text_validate: root.update_data()
+                    
